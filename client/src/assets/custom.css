@@ -1,0 +1,39 @@
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+.btn:focus,
+.form-control:focus,
+.page-link:focus,
+.form-select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.content-scroll {
+  -webkit-overflow-scrolling: touch; 
+  background: #fff; 
+}
+
+.class-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+}
+.class-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
