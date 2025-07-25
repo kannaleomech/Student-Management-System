@@ -130,9 +130,19 @@ DB_NAME=student_db
 DB_HOST=127.0.0.1
 ```
 
+- Create database:
+```bash
+npx sequelize-cli db:create
+```
+
 - Run database migrations:
 ```bash
 npx sequelize-cli db:migrate
+```
+
+- Run database seeders:
+```bash
+npx sequelize-cli db:seed:all
 ```
 
 - Start the backend server:
@@ -163,7 +173,7 @@ npm run dev
 
 ### **4. Access the App**
 - **Frontend:** `http://localhost:5173`
-- **Backend API:** `http://localhost:5000/api`
+- **Backend API:** `http://localhost:8600/api`
 
 ---
 
