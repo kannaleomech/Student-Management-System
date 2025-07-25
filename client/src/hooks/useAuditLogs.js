@@ -1,8 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
-import { fetchAudidLogs } from '../api/auditLogs';
+import { useQuery } from "@tanstack/react-query";
+import { fetchAudidLogs } from "../api/auditLogs";
 
-export const useAuditLogs = () =>
+export const useAuditLogs = ({ page, limit }) =>
   useQuery({
-    queryKey: ['auditLogs'],
-    queryFn: fetchAudidLogs,
+    queryKey: ["auditLogs", { page, limit }],
+    queryFn: () => fetchAudidLogs(page, limit),
   });

@@ -8,10 +8,10 @@ const listAuditLogs = async (req, res) => {
     const offset = (page - 1) * limit;
 
     // Build search condition
-    const whereCondition = { status: 1 }; 
-    
+    const whereCondition = { status: 1 };
+
     if (userId) {
-      whereCondition.userId = userId; 
+      whereCondition.userId = userId;
     }
 
     if (search) {
@@ -32,15 +32,15 @@ const listAuditLogs = async (req, res) => {
         },
       ],
       order: [["createdAt", "DESC"]],
-      offset,
-      limit,
+      limit: parseInt(limit),
+      offset: (parseInt(page) - 1) * parseInt(limit),
     });
 
     return res.json({
       data: rows,
-      currentPage: page,
+      total: count,
+      currentPage: parseInt(page),
       totalPages: Math.ceil(count / limit),
-      totalItems: count,
     });
   } catch (error) {
     return res.status(500).json({
